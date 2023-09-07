@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-export const SearchResultNum = ({ movies }) => {
+export const SearchResultNum = ({ moviesLengthList }) => {
 	return (
 		<p className='num-results'>
-			Found <strong>{movies.length}</strong> results
+			Found <strong>{moviesLengthList}</strong> results
 		</p>
 	);
 };

@@ -8,9 +8,15 @@ import { SearchMoiveItem } from './SearchMoiveItem';
 import { SearchResultNum } from './SearchResultNum';
 import { WatchedMovieItem } from './WatchMovieItem';
 import { WatchedMoviesList } from './WatchedMoviesList';
+import { MovieDetails } from './MovieDetails/MovieDetails';
+import { Loader } from './Loader';
+import { MoviesSummery } from './MoviesSummery/MoviesSummery';
+import { ErrorMessage } from './ErrorMessage';
 import { ListBox } from './ListBox';
+import { StartRating } from './StartRating';
 export {
 	NavBar,
+	StartRating,
 	SearchMoviesList,
 	SearchMoiveItem,
 	SearchResultNum,
@@ -18,5 +24,9 @@ export {
 	WatchedMoviesList,
 	ListBox,
 	Search,
+	MoviesSummery,
+	MovieDetails,
+	Loader,
 	Logo,
+	ErrorMessage,
 };

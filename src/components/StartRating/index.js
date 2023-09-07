@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Star } from './Star';
 const styles = {
 	ratingContainer: {
@@ -19,13 +19,18 @@ const styles = {
 };
 export const StartRating = ({
 	maxRating = 5,
-	color = '#000',
-	bgColor = 'gray',
+	color = 'yellow',
+	bgColor = '#343a40',
 	size = '1rem',
+	handleUserRating,
 }) => {
 	const [selectedStarts, setStarts] = useState(0);
 	const [selectedTempStars, setSelectedTempStars] = useState(0);
-
+	const ratingCountRef = useRef(0);
+	useEffect(() => {
+		if (selectedStarts) ratingCountRef.current++;
+		console.log('rating count', ratingCountRef.current);
+	}, [selectedStarts]);
 	return (
 		<div
 			className={'ratingContainer'}
@@ -39,9 +44,12 @@ export const StartRating = ({
 							filled={false}
 							key={i}
 							onClick={() => {
+								handleUserRating(i + 1);
 								setStarts(i + 1);
 							}}
-							onHoverIn={() => setSelectedTempStars(i + 1)}
+							onHoverIn={() => {
+								setSelectedTempStars(i + 1);
+							}}
 							onHoverOut={() => setSelectedTempStars(0)}
 							fill={
 								selectedTempStars
@@ -53,7 +61,7 @@ export const StartRating = ({
 				})}
 			</div>
 			<span style={{ color: 'white' }}>
-				{selectedTempStars || selectedStarts || ''}
+				{selectedTempStars || selectedStarts || ``}
 			</span>
 		</div>
 	);

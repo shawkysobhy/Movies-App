@@ -2,10 +2,12 @@
 
 import React from 'react';
 
-export const SearchMoiveItem = ({ movie }) => {
-	console.log('list', movie);
+export const SearchMoiveItem = ({ movie, handleSelectedMovie }) => {
 	return (
-		<li>
+		<li
+			onClick={() => {
+				handleSelectedMovie(movie);
+			}}>
 			<img src={movie.Poster} alt={`${movie.Title} poster`} />
 			<h3>{movie.Title}</h3>
 			<div>
