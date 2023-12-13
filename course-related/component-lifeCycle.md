@@ -1,3 +1,0 @@
-<!-- @format -->
-
-# Component Life Cycle

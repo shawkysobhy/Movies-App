@@ -1,6 +1,5 @@
 {
 	"name": "popcorn",
-	"homepage": "usePopCorn",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
