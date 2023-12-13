@@ -26,7 +26,7 @@ export const MovieDetails = ({
 			setErrorMessage('');
 			try {
 				let res = await axios.get(
-					`http://www.omdbapi.com/?apikey=${KEY}&i=${id}`
+					`https://www.omdbapi.com/?apikey=${KEY}&i=${id}`
 				);
 				setMovie(res.data);
 			} catch (error) {
